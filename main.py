@@ -1,6 +1,6 @@
-import requests
 from bs4 import BeautifulSoup
 import time
+from security import safe_requests
 
 
 def check_status(response_local):
@@ -45,7 +45,7 @@ def fetch_crypto_price():
                       "Chrome/122.0.0.0Safari/537.36"
     } # Header to mimic the browser request
     URL = "https://coinmarketcap.com/"
-    r = requests.get(URL, headers=HEADER)
+    r = safe_requests.get(URL, headers=HEADER)
     https_status = check_status(r)
 
     if https_status:
