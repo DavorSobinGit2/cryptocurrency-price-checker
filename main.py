@@ -45,7 +45,7 @@ def fetch_crypto_price():
                       "Chrome/122.0.0.0Safari/537.36"
     } # Header to mimic the browser request
     URL = "https://coinmarketcap.com/"
-    r = requests.get(URL, headers=HEADER)
+    r = requests.get(URL, headers=HEADER, timeout=60)
     https_status = check_status(r)
 
     if https_status:
